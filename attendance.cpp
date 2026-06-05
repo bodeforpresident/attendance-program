@@ -6,7 +6,6 @@ using namespace std;
 
 int main()
 {
-
     // names of the 2028 engineering class
     vector<string> students = {
         "Envy",
@@ -57,11 +56,12 @@ int main()
             myFile << students[i] << " is present\n\n";
         } else if (present == 2) { // if student is not present
             myFile << students[i] << " is not present\n\n";
-        } else if (present < 1 || present > 2) {
+        }
+        do {
             cout << "Please try again.\n";
             cin.clear();
             cin.ignore(10000, '\n');
             cin >> present;
-        }
+        } while (present < 1 || present > 2);
     }
 }
