@@ -9,33 +9,42 @@ int main()
 
     // names of the 2028 engineering class
     vector<string> students = {
-        "Envy Brown",
-        "Ilyas Devaux",
-        "Damon Diulio",
-        "Hamir Griffith",
-        "Anthony Landritsi",
-        "Bode Lentz",
-        "George Louglos",
-        "Jordan Mckenzie",
-        "Christopher Richter",
-        "Caleb Roswell",
-        "Seth Scott",
-        "Ryan Seno",
-        "Tiahna Spencer",
-        "Bailin Stokes",
-        "Elijah Verdaguer",
-        "Connor Wentworth"
+        "Envy",
+        "Ilyas",
+        "Damon",
+        "Hamir",
+        "Anthony",
+        "Bode",
+        "George",
+        "Jordan",
+        "Christopher",
+        "Caleb",
+        "Seth",
+        "Ryan",
+        "Tiahna",
+        "Bailin",
+        "Elijah",
+        "Connor"
     };
 
     // declaring variables;
     string date;
     int present;
+    int k = 0;
 
     // user input
     cout << "==============================================\n";
     cout << "Enter the date in month, day, year format\n";
     cout << "==============================================\n";
     getline (cin, date); // used for potential spaces or special characters
+    do {
+        k++;
+        if (date[k] == '/') {
+            cout << "Please enter it again without any slashes\n";
+            getline (cin, date);
+        }
+    } while (k < date.length());
+    
     cout << "==============================================\n";
     ofstream myFile("Attendance - " + date + ".txt");
 
