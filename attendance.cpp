@@ -57,11 +57,11 @@ int main()
         } else if (present == 2) { // if student is not present
             myFile << students[i] << " is not present\n\n";
         }
-        do {
+        while (present < 1 || present > 2) {
             cout << "Please try again.\n";
             cin.clear();
             cin.ignore(10000, '\n');
             cin >> present;
-        } while (present < 1 || present > 2);
+        };
     }
 }
